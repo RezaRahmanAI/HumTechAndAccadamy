@@ -2,21 +2,18 @@
   <div class="mx-auto max-w-7xl px-6">
     <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div class="max-w-xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">Brands that rely on us</p>
-        <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Sound partnerships that compound value</h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Hear from founders and technology leaders who ship faster with VivaSphere teams embedded across their
-          organizations.
-        </p>
+        <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">{{ section.eyebrow }}</p>
+        <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">{{ section.title }}</h2>
+        <p class="mt-4 text-lg text-slate-600">{{ section.description }}</p>
       </div>
       <div class="flex items-center gap-2 text-sm font-semibold text-blue-600">
         <span class="h-2 w-2 rounded-full bg-blue-600"></span>
-        <span>Rated 4.9/5 on IndependentReviewers</span>
+        <span>{{ section.ratingLabel }}</span>
       </div>
     </div>
     <div class="mt-12 grid gap-6 lg:grid-cols-3">
       <article
-        *ngFor="let testimonial of testimonials"
+        *ngFor="let testimonial of section.items"
         class="flex h-full flex-col gap-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
       >
         <div class="flex items-center gap-4">

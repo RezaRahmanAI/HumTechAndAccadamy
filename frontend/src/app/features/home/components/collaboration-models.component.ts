@@ -12,4 +12,11 @@ import { RouterModule } from '@angular/router';
 })
 export class CollaborationModelsComponent {
   @Input({ required: true }) models: CollaborationModel[] = [];
+
+  toSlug(name: string): string {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
 }

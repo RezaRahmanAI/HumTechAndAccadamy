@@ -1,0 +1,33 @@
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">Our recent blogs</p>
+        <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Insights on scaling software delivery</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Explore playbooks from our engineering, product, and design leaders on building resilient digital platforms.
+        </p>
+      </div>
+      <a
+        routerLink="/blog"
+        class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-600"
+        >Browse all articles →</a
+      >
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <a
+        *ngFor="let post of posts"
+        [routerLink]="['/blog', post.slug]"
+        class="group flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50/80 p-6 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
+      >
+        <span class="text-xs font-semibold uppercase tracking-wide text-blue-600">{{ post.category }}</span>
+        <h3 class="text-xl font-semibold text-slate-900">{{ post.title }}</h3>
+        <p class="text-sm text-slate-600">{{ post.excerpt }}</p>
+        <div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+          <span>{{ post.author }}</span>
+          <span>{{ post.publishedAt | date: 'mediumDate' }} · {{ post.readTime }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

@@ -16,6 +16,9 @@ import { ExcellenceComponent } from './components/excellence.component';
 import { ProcessTimelineComponent } from './components/process-timeline.component';
 import { FaqAccordionComponent } from './components/faq-accordion.component';
 import { FinalCtaComponent } from './components/final-cta.component';
+import { WhyChooseUsComponent } from './components/why-choose-us.component';
+import { TeamShowcaseComponent } from './components/team-showcase.component';
+import { BlogPreviewComponent } from './components/blog-preview.component';
 
 @Component({
   standalone: true,
@@ -33,7 +36,10 @@ import { FinalCtaComponent } from './components/final-cta.component';
     ExcellenceComponent,
     ProcessTimelineComponent,
     FaqAccordionComponent,
-    FinalCtaComponent
+    FinalCtaComponent,
+    WhyChooseUsComponent,
+    TeamShowcaseComponent,
+    BlogPreviewComponent
   ],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

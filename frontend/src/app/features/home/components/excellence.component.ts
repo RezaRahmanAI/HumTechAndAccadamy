@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ExcellenceShowcase } from '../../../shared/models/content.models';
 
 @Component({
   selector: 'app-excellence',
@@ -9,5 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExcellenceComponent {
-  @Input({ required: true }) items: Array<{ title: string; description: string; icon: string }> = [];
+  @Input({ required: true }) section!: ExcellenceShowcase;
 }

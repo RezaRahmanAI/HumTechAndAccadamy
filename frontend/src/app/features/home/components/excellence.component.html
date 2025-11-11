@@ -1,18 +1,23 @@
 <section class="bg-slate-900 py-20 text-white">
   <div class="mx-auto max-w-7xl px-6">
     <div class="max-w-2xl">
-      <p class="text-sm font-semibold uppercase tracking-wide text-cyan-300">Why choose VivaSphere</p>
-      <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Partnership built on accountability and craftsmanship</h2>
-      <p class="mt-4 text-lg text-slate-300">
-        Our blended delivery model keeps a pulse on your vision while delivering measurable results every sprint.
-      </p>
+      <p class="text-sm font-semibold uppercase tracking-wide text-cyan-300">{{ section.eyebrow }}</p>
+      <h2 class="mt-4 text-3xl font-bold sm:text-4xl">{{ section.title }}</h2>
+      <p class="mt-4 text-lg text-slate-300">{{ section.description }}</p>
     </div>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      <div *ngFor="let item of items" class="rounded-3xl bg-white/5 p-6 backdrop-blur">
-        <div class="text-2xl">{{ item.icon }}</div>
-        <h3 class="mt-4 text-xl font-semibold">{{ item.title }}</h3>
-        <p class="mt-2 text-sm text-slate-200">{{ item.description }}</p>
-      </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <a
+        *ngFor="let badge of section.badges"
+        [href]="badge.link"
+        target="_blank"
+        class="group flex h-full flex-col justify-between rounded-3xl bg-white/10 p-6 text-white transition hover:bg-white/20"
+      >
+        <div>
+          <h3 class="text-lg font-semibold">{{ badge.name }}</h3>
+          <p class="mt-2 text-sm text-slate-200">{{ badge.description }}</p>
+        </div>
+        <span class="mt-6 text-xs font-semibold uppercase tracking-wide text-cyan-200">View credential →</span>
+      </a>
     </div>
   </div>
 </section>
