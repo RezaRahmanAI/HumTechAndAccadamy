@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ProcessSection } from '../../../shared/models/content.models';
 
 @Component({
   selector: 'app-process-timeline',
@@ -9,5 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProcessTimelineComponent {
-  @Input({ required: true }) steps: Array<{ step: number; title: string; description: string }> = [];
+  @Input({ required: true }) section!: ProcessSection;
 }

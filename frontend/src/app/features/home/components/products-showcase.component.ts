@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ProductCaseStudy } from '../../../shared/models/content.models';
+import { ProductCaseStudy, ProductSpotlight } from '../../../shared/models/content.models';
 
 @Component({
   selector: 'app-products-showcase',
@@ -11,5 +11,6 @@ import { ProductCaseStudy } from '../../../shared/models/content.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsShowcaseComponent {
-  @Input({ required: true }) products: ProductCaseStudy[] = [];
+  @Input({ required: true }) featured: ProductCaseStudy[] = [];
+  @Input({ required: true }) spotlights: ProductSpotlight[] = [];
 }

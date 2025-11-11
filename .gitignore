@@ -1,0 +1,11 @@
+# Root ignores
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend-build.log
+backend/bin/
+backend/obj/
+**/bin/
+**/obj/
+.vscode/
+.DS_Store

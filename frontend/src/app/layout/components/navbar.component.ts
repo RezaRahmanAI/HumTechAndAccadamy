@@ -6,6 +6,7 @@ interface NavItem {
   label: string;
   path?: string;
   external?: boolean;
+  fragment?: string;
   children?: NavItem[];
 }
 
@@ -21,6 +22,8 @@ export class NavbarComponent {
   isMobileMenuOpen = false;
   isServicesOpen = false;
   isHiringOpen = false;
+  mobileServicesOpen = false;
+  mobileHiringOpen = false;
 
   readonly navItems: NavItem[] = [
     {
@@ -32,14 +35,16 @@ export class NavbarComponent {
         { label: 'Offshore Development', path: '/services/offshore-development' }
       ]
     },
-    { label: 'Technologies', path: '/about' },
+    { label: 'Technologies', path: '/', fragment: 'tech-stack' },
     {
       label: 'For Hiring',
       children: [
         { label: 'Hire Developers', path: '/services/team-augmentation' },
-        { label: 'JavaScript Experts', path: '/services/js-experts' },
-        { label: 'Python Engineers', path: '/services/python-experts' },
-        { label: 'Cloud Architects', path: '/services/cloud-architects' }
+        { label: 'Hire JavaScript Developers', path: '/services/mvp-services' },
+        { label: 'Hire Python Developers', path: '/services/data-analytics' },
+        { label: 'Hire Java Developers', path: '/services/end-to-end-development' },
+        { label: 'Hire Golang Developers', path: '/services/cloud-services' },
+        { label: 'Hire .NET Developers', path: '/services/team-augmentation' }
       ]
     },
     { label: 'MVP Calculator', path: '/mvp-calculator' },
@@ -54,6 +59,16 @@ export class NavbarComponent {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+    this.mobileServicesOpen = false;
+    this.mobileHiringOpen = false;
+  }
+
+  toggleMobileSection(section: 'services' | 'hiring'): void {
+    if (section === 'services') {
+      this.mobileServicesOpen = !this.mobileServicesOpen;
+    } else {
+      this.mobileHiringOpen = !this.mobileHiringOpen;
+    }
   }
 
   @HostListener('window:scroll')

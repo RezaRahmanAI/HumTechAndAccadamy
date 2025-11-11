@@ -1,7 +1,7 @@
 <ng-container *ngIf="job$ | async as job">
   <section class="bg-slate-900 py-24 text-white">
     <div class="mx-auto max-w-4xl px-6">
-      <a routerLink="/career" class="text-sm text-cyan-300">← Back to careers</a>
+      <a routerLink="/careers" class="text-sm text-cyan-300">← Back to careers</a>
       <h1 class="mt-6 text-4xl font-bold">{{ job.title }}</h1>
       <p class="mt-4 text-sm text-slate-300">{{ job.location }} · {{ job.employmentType }}</p>
     </div>
@@ -26,7 +26,7 @@
       </article>
       <div class="rounded-3xl bg-blue-50 p-8 text-center">
         <h3 class="text-xl font-semibold text-blue-900">Ready to apply?</h3>
-        <p class="mt-2 text-sm text-blue-900">Send your CV to careers@vivasphere.dev with the subject “{{ job.title }}”.</p>
+        <p class="mt-2 text-sm text-blue-900">Send your CV to careers&#64;vivasphere.dev with the subject “{{ job.title }}”.</p>
         <a
           routerLink="/contact"
           class="mt-6 inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-lg"

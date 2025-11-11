@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Testimonial } from '../../../shared/models/content.models';
+import { TestimonialSection } from '../../../shared/models/content.models';
 
 @Component({
   selector: 'app-testimonials',
@@ -10,5 +10,5 @@ import { Testimonial } from '../../../shared/models/content.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent {
-  @Input({ required: true }) testimonials: Testimonial[] = [];
+  @Input({ required: true }) section!: TestimonialSection;
 }

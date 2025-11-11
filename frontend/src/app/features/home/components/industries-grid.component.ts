@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Industry } from '../../../shared/models/content.models';
+import { IndustrySection } from '../../../shared/models/content.models';
 
 @Component({
   selector: 'app-industries-grid',
@@ -10,5 +10,5 @@ import { Industry } from '../../../shared/models/content.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IndustriesGridComponent {
-  @Input({ required: true }) industries: Industry[] = [];
+  @Input({ required: true }) section!: IndustrySection;
 }

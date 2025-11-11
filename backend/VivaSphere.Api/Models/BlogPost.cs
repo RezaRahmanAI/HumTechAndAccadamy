@@ -8,5 +8,7 @@ public record BlogPost(
     string Body,
     string Category,
     DateTime PublishedAt,
-    string CoverImageUrl
+    string CoverImageUrl,
+    string Author,
+    string ReadTime
 );

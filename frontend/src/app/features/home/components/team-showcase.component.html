@@ -1,0 +1,27 @@
+<section class="bg-slate-900 py-20 text-white">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-cyan-300">Meet our leadership</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Architects who guide every engagement</h2>
+        <p class="mt-4 text-lg text-slate-200">
+          Senior architects, designers, and data leads work directly with your stakeholders to keep strategy and
+          execution aligned.
+        </p>
+      </div>
+      <a
+        routerLink="/about"
+        class="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+        >View company leadership →</a
+      >
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      <article *ngFor="let member of members" class="flex h-full flex-col gap-3 rounded-3xl bg-white/10 p-6">
+        <div class="h-16 w-16 rounded-2xl bg-white/20"></div>
+        <h3 class="text-xl font-semibold">{{ member.name }}</h3>
+        <p class="text-sm text-cyan-200">{{ member.title }}</p>
+        <p class="text-xs text-blue-100">{{ member.bio }}</p>
+      </article>
+    </div>
+  </div>
+</section>

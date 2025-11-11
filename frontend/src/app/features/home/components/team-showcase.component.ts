@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FinalCtaContent } from '../../../shared/models/content.models';
+import { TeamMember } from '../../../shared/models/content.models';
 
 @Component({
-  selector: 'app-final-cta',
+  selector: 'app-team-showcase',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './final-cta.component.html',
+  templateUrl: './team-showcase.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FinalCtaComponent {
-  @Input({ required: true }) content!: FinalCtaContent;
+export class TeamShowcaseComponent {
+  @Input({ required: true }) members: TeamMember[] = [];
 }
