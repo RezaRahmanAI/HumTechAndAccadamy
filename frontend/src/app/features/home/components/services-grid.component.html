@@ -1,0 +1,28 @@
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">Premium services</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Engineering depth across the product lifecycle</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        We design, build, and evolve secure digital platforms. Our multi-disciplinary teams align architecture with
+        business outcomes to move from roadmap to reality.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <a
+        *ngFor="let service of services"
+        [routerLink]="['/services', service.slug]"
+        class="group flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50/80 p-6 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
+      >
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600">
+          <span class="text-xl">{{ service.icon }}</span>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900">{{ service.title }}</h3>
+        <p class="text-sm text-slate-600">{{ service.description }}</p>
+        <ul class="mt-auto space-y-2 text-xs text-slate-500">
+          <li *ngFor="let highlight of service.highlights">• {{ highlight }}</li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</section>

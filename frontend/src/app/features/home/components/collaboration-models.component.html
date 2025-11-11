@@ -1,0 +1,24 @@
+<section class="bg-slate-50 py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">How we collaborate</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Flexible engagement shaped for your roadmap</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Choose the level of ownership you need. We supply senior talent, delivery processes, and proven frameworks to
+        help you ship faster without losing control.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      <a
+        *ngFor="let model of models; let i = index"
+        [routerLink]="['/services', model.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') ]"
+        class="group relative flex flex-col gap-4 rounded-3xl border border-transparent bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+      >
+        <span class="text-sm font-semibold text-blue-500">{{ '0' + (i + 1) }}</span>
+        <h3 class="text-xl font-semibold text-slate-900">{{ model.name }}</h3>
+        <p class="text-sm text-slate-600">{{ model.shortDescription }}</p>
+        <span class="mt-auto text-sm font-semibold text-blue-600">Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>

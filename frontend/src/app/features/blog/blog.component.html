@@ -1,0 +1,39 @@
+<section class="bg-slate-900 py-24 text-white">
+  <div class="mx-auto max-w-6xl px-6 text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Insights</p>
+    <h1 class="mt-4 text-4xl font-bold">Engineering playbooks and product leadership</h1>
+    <p class="mt-4 text-lg text-slate-300">
+      Lessons from scaling distributed teams, architecture decisions, and delivery excellence.
+    </p>
+  </div>
+</section>
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-wrap justify-center gap-3">
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        (click)="selected = category"
+        class="rounded-full px-4 py-2 text-sm font-semibold"
+        [ngClass]="{
+          'bg-blue-600 text-white shadow-lg': selected === category,
+          'bg-slate-100 text-slate-600': selected !== category
+        }"
+      >
+        {{ category }}
+      </button>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3" *ngIf="posts$ | async as posts">
+      <a
+        *ngFor="let post of filter(posts)"
+        [routerLink]="['/blog', post.slug]"
+        class="group flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50/80 p-6 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
+      >
+        <p class="text-sm uppercase tracking-wide text-blue-600">{{ post.category }}</p>
+        <h3 class="text-xl font-semibold text-slate-900">{{ post.title }}</h3>
+        <p class="text-sm text-slate-600">{{ post.excerpt }}</p>
+        <span class="mt-auto text-xs text-slate-500">{{ post.publishedAt | date }}</span>
+      </a>
+    </div>
+  </div>
+</section>

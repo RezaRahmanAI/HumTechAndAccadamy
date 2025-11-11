@@ -1,0 +1,56 @@
+<section class="relative overflow-hidden">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-20 lg:grid-cols-2">
+    <div class="space-y-8">
+      <span class="rounded-full bg-blue-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
+        {{ hero.eyebrow }}
+      </span>
+      <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+        {{ hero.title }}
+      </h1>
+      <p class="text-lg leading-8 text-slate-600">{{ hero.description }}</p>
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <a
+          routerLink="/contact"
+          class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+          >{{ hero.primaryCta }}</a
+        >
+        <a
+          routerLink="/about"
+          class="inline-flex items-center justify-center rounded-full border border-blue-200 px-6 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50"
+          >{{ hero.secondaryCta }}</a
+        >
+      </div>
+      <dl class="grid grid-cols-2 gap-6 pt-6 sm:grid-cols-4">
+        <div
+          *ngFor="let stat of hero.stats"
+          class="rounded-2xl border border-slate-200 bg-white/80 p-4 text-center shadow-sm backdrop-blur"
+        >
+          <dt class="text-xs uppercase tracking-wide text-slate-500">{{ stat.label }}</dt>
+          <dd class="mt-2 text-2xl font-semibold text-slate-900">{{ stat.value }}</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="relative flex items-center justify-center">
+      <div class="relative z-10 w-full max-w-md rounded-[2.5rem] bg-gradient-to-br from-blue-600 to-cyan-400 p-8 text-white shadow-card">
+        <h3 class="text-xl font-semibold">Human-centered innovation</h3>
+        <p class="mt-3 text-sm text-blue-50">
+          VivaSphere squads blend senior engineers, designers, and strategists to design dependable platforms for
+          ambitious companies.
+        </p>
+        <div class="mt-6 grid gap-4 text-left text-sm">
+          <div class="rounded-2xl bg-white/10 px-4 py-3">
+            <p class="text-blue-100">Embedded squads integrated with your workflow</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3">
+            <p class="text-blue-100">Battle-tested practices for secure, scalable delivery</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 px-4 py-3">
+            <p class="text-blue-100">Strategic partners from discovery to post-launch growth</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute -bottom-12 -right-8 h-64 w-64 rounded-full bg-blue-200/60 blur-3xl"></div>
+      <div class="absolute -left-12 top-12 h-52 w-52 rounded-full bg-cyan-200/50 blur-3xl"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<div class="relative">
+  <div class="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent"></div>
+  <ng-container *ngIf="content$ | async as content">
+    <app-hero [hero]="content.hero"></app-hero>
+    <app-trusted-by [logos]="content.trustedBy"></app-trusted-by>
+    <app-collaboration-models [models]="content.collaborationModels"></app-collaboration-models>
+    <app-services-grid [services]="content.services"></app-services-grid>
+    <app-products-showcase [products]="content.products"></app-products-showcase>
+    <app-tech-stack-marquee [logos]="content.techStack"></app-tech-stack-marquee>
+    <app-testimonials [testimonials]="content.testimonials"></app-testimonials>
+    <app-industries-grid [industries]="content.industries"></app-industries-grid>
+    <app-excellence [items]="content.whyChooseUs"></app-excellence>
+    <app-process-timeline [steps]="content.processSteps"></app-process-timeline>
+    <app-faq-accordion [items]="content.faqs"></app-faq-accordion>
+    <app-final-cta></app-final-cta>
+  </ng-container>
+  <div *ngIf="loading" class="flex items-center justify-center py-32">
+    <div class="h-12 w-12 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600"></div>
+  </div>
+</div>
