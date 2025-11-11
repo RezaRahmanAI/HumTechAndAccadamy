@@ -1,0 +1,23 @@
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">How it works</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">A transparent journey from kickoff to scale</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        We align with your goals, assemble the right squad, and keep iterating on measurable outcomes.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-8 lg:grid-cols-4">
+      <div
+        *ngFor="let step of steps"
+        class="relative flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 text-slate-700"
+      >
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
+          {{ step.step }}
+        </span>
+        <h3 class="text-lg font-semibold text-slate-900">{{ step.title }}</h3>
+        <p class="text-sm text-slate-600">{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

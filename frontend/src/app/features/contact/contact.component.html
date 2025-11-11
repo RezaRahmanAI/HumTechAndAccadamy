@@ -1,0 +1,58 @@
+<section class="bg-slate-900 py-24 text-white">
+  <div class="mx-auto max-w-5xl px-6 text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Contact</p>
+    <h1 class="mt-4 text-4xl font-bold">Let’s map out your engineering roadmap</h1>
+    <p class="mt-4 text-lg text-slate-300">
+      Share your vision and we will assemble a dedicated squad in less than two weeks.
+    </p>
+  </div>
+</section>
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="grid gap-6">
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Name</label>
+        <input formControlName="name" class="rounded-2xl border border-slate-200 px-4 py-3" placeholder="Jane Doe" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Email</label>
+        <input formControlName="email" class="rounded-2xl border border-slate-200 px-4 py-3" placeholder="you@company.com" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Company</label>
+        <input formControlName="company" class="rounded-2xl border border-slate-200 px-4 py-3" placeholder="Your company" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Budget Range</label>
+        <select formControlName="budgetRange" class="rounded-2xl border border-slate-200 px-4 py-3">
+          <option value="">Select range</option>
+          <option>Under $25k</option>
+          <option>$25k - $50k</option>
+          <option>$50k - $100k</option>
+          <option>$100k+</option>
+        </select>
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Project Details</label>
+        <textarea formControlName="message" rows="4" class="rounded-2xl border border-slate-200 px-4 py-3"></textarea>
+      </div>
+      <button
+        type="submit"
+        class="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+      >
+        Submit request
+      </button>
+      <p *ngIf="submitted" class="text-sm font-semibold text-blue-600">Thanks! Our team will respond shortly.</p>
+    </form>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      <div class="rounded-3xl bg-white p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Dhaka HQ</h3>
+        <p class="mt-2 text-sm text-slate-600">Banani, Dhaka 1213</p>
+      </div>
+      <div class="rounded-3xl bg-white p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Rajshahi Delivery Center</h3>
+        <p class="mt-2 text-sm text-slate-600">Rajshahi City 6000</p>
+      </div>
+    </div>
+  </div>
+</section>

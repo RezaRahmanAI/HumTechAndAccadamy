@@ -1,0 +1,20 @@
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">Industry expertise</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Domain specialists for regulated environments</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        From fintech compliance to telecommunication reliability, our teams understand the nuance required to ship and
+        scale mission-critical software.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        *ngFor="let industry of industries"
+        class="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center text-sm font-semibold text-slate-700 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white"
+      >
+        {{ industry.name }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section class="bg-slate-900 py-24 text-white">
+  <div class="mx-auto max-w-6xl px-6 text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Case studies</p>
+    <h1 class="mt-4 text-4xl font-bold">Products that unlock new revenue streams</h1>
+    <p class="mt-4 text-lg text-slate-300">
+      Discover how we build resilient architecture across fintech, logistics, and media platforms.
+    </p>
+  </div>
+</section>
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <a
+        *ngFor="let product of products$ | async"
+        [routerLink]="['/products', product.slug]"
+        class="group flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50/80 p-6 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
+      >
+        <p class="text-sm uppercase tracking-wide text-blue-600">{{ product.industry }}</p>
+        <h3 class="text-xl font-semibold text-slate-900">{{ product.name }}</h3>
+        <p class="text-sm text-slate-600">{{ product.shortDescription }}</p>
+        <span class="mt-auto text-sm font-semibold text-blue-600">View case study →</span>
+      </a>
+    </div>
+  </div>
+</section>

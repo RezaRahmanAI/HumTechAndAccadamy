@@ -1,0 +1,26 @@
+<section class="bg-slate-50 py-20">
+  <div class="mx-auto max-w-5xl px-6">
+    <div class="text-center">
+      <p class="text-sm font-semibold uppercase tracking-wide text-blue-500">Frequently asked questions</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Answers from our delivery leads</h2>
+    </div>
+    <div class="mt-12 space-y-4">
+      <div
+        *ngFor="let item of items"
+        class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-blue-200 hover:shadow-lg"
+      >
+        <button
+          type="button"
+          class="flex w-full items-center justify-between text-left text-lg font-semibold text-slate-900"
+          (click)="toggle(item.id)"
+        >
+          {{ item.question }}
+          <span class="text-sm text-blue-500">{{ openId === item.id ? '−' : '+' }}</span>
+        </button>
+        <div *ngIf="openId === item.id" class="mt-4 text-sm leading-6 text-slate-600">
+          {{ item.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

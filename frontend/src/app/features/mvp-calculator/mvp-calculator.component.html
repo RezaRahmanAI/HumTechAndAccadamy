@@ -1,0 +1,53 @@
+<section class="bg-slate-900 py-24 text-white">
+  <div class="mx-auto max-w-5xl px-6 text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">MVP Estimator</p>
+    <h1 class="mt-4 text-4xl font-bold">Project your MVP investment in minutes</h1>
+    <p class="mt-4 text-lg text-slate-300">
+      Adjust variables to see how scope impacts time and budget before speaking to our consultants.
+    </p>
+  </div>
+</section>
+<section class="bg-white py-20">
+  <div class="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm">
+    <form [formGroup]="form" class="grid gap-6">
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Product type</label>
+        <input formControlName="productType" class="rounded-2xl border border-slate-200 px-4 py-3" placeholder="SaaS CRM" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Platforms</label>
+        <select formControlName="platforms" class="rounded-2xl border border-slate-200 px-4 py-3">
+          <option value="web">Web</option>
+          <option value="mobile">Mobile</option>
+          <option value="both">Web & Mobile</option>
+        </select>
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Team size</label>
+        <input type="number" formControlName="teamSize" min="2" class="rounded-2xl border border-slate-200 px-4 py-3" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Duration (months)</label>
+        <input type="number" formControlName="duration" min="1" class="rounded-2xl border border-slate-200 px-4 py-3" />
+      </div>
+      <div class="grid gap-2">
+        <label class="text-sm font-semibold text-slate-700">Complexity</label>
+        <select formControlName="complexity" class="rounded-2xl border border-slate-200 px-4 py-3">
+          <option value="standard">Standard</option>
+          <option value="advanced">Advanced</option>
+          <option value="enterprise">Enterprise</option>
+        </select>
+      </div>
+    </form>
+    <div class="mt-10 rounded-3xl bg-slate-900 p-8 text-white">
+      <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">Estimated investment</p>
+      <h2 class="mt-4 text-3xl font-bold">${{ estimate().lower }} - ${{ estimate().upper }}</h2>
+      <p class="mt-2 text-sm text-slate-300">Includes design, development, QA, and delivery management.</p>
+      <a
+        routerLink="/contact"
+        class="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-lg"
+        >Book a detailed consultation</a
+      >
+    </div>
+  </div>
+</section>

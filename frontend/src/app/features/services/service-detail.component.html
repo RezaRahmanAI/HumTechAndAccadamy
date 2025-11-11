@@ -1,0 +1,63 @@
+<ng-container *ngIf="service$ | async as service">
+  <section class="bg-slate-900 py-24 text-white">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">{{ service.category }}</p>
+      <h1 class="mt-4 text-4xl font-bold">{{ service.title }}</h1>
+      <p class="mt-4 text-lg text-slate-300">{{ service.subtitle }}</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          routerLink="/contact"
+          class="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-lg transition hover:bg-blue-50"
+          >Hire a Dedicated Team</a
+        >
+        <a
+          routerLink="/services"
+          class="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+          >Back to services</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2 space-y-8">
+          <article *ngFor="let section of service.sections" class="rounded-3xl bg-slate-50 p-8">
+            <h2 class="text-2xl font-semibold text-slate-900">{{ section.heading }}</h2>
+            <p class="mt-4 text-base leading-7 text-slate-600">{{ section.body }}</p>
+          </article>
+          <div class="rounded-3xl bg-blue-50 p-8">
+            <h3 class="text-xl font-semibold text-blue-900">Benefits</h3>
+            <ul class="mt-4 grid gap-3 text-sm text-blue-900 md:grid-cols-2">
+              <li *ngFor="let highlight of service.highlights" class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+                <span>{{ highlight }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-semibold text-slate-900">Engagement snapshot</h3>
+            <p class="mt-4 text-sm text-slate-600">{{ service.description }}</p>
+            <div class="mt-6 space-y-3 text-sm text-slate-500">
+              <p><strong class="text-slate-800">Type:</strong> {{ service.type }}</p>
+              <p><strong class="text-slate-800">Category:</strong> {{ service.category }}</p>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-slate-900 p-8 text-white">
+            <h3 class="text-xl font-semibold">Ready to discuss?</h3>
+            <p class="mt-2 text-sm text-slate-200">
+              Tell us about your timeline and skill requirements. We respond within one business day.
+            </p>
+            <a
+              routerLink="/contact"
+              class="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-blue-700"
+              >Schedule strategy session</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
